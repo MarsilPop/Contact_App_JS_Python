@@ -4,11 +4,21 @@ const ContactList = ({ contacts, updateContact, updateCallback }) => {
     const onDelete = async (id) => {
         try {
             const options = {
-                method: "DELETE"
+                method: "DELETE",
+            };
+            const response = await fetch(
+                `http://127.0.0.1:5000/delete_contact/${id}`,
+                options
+            );
+            if (response.status == 200) {
+                updateCallback();
+            } else {
+                console.error("Failed to delete");
             }
-            const response = await fetch(`http://127.0.0./delete_contact/${id}`)
+        } catch (error) {
+            alert(error);
         }
-    }
+    };
 
     return (
         <div>
@@ -32,7 +42,9 @@ const ContactList = ({ contacts, updateContact, updateCallback }) => {
                                 <button onClick={() => updateContact(contact)}>
                                     Update
                                 </button>
-                                <button>Delete</button>
+                                <button onClick={() => onDelete(contact.id)}>
+                                    Delete
+                                </button>
                             </td>
                         </tr>
                     ))}
