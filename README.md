@@ -4,4 +4,8 @@ You can Create, Update, Delete and Fetch/Get the different entries (CRUD - Creat
 The frontend is built in React that interacts with the backend which is written in Python with Flask.
 
 The App is based on a lesson from Tech With Tim.
-Credits to his course. https://www.youtube.com/@TechWithTim
+
+Credits to his course. 
+https://www.youtube.com/@TechWithTim
+
+-- Educational purposes only --
